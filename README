@@ -6,7 +6,7 @@ Version: 0.1
 Author: Rachel - NebulaM87 (Twitter - @nebulam87)
 This is a tool that might prove useful when reverse engineering an application or service.
 
-Instead of sending a buffer as a string, it is better indicating it as a byte buffer in the code, as the debugger will show hexadecimal characters when a register is overwritter. 
+Instead of sending a buffer as a string, it is better indicating it as a byte buffer in the code, as the debugger will show hexadecimal characters when a register is overwritten. 
 When you have to search those hex characters on your buffer to see exactly which bytes overwrote registers, it won't be necessary to convert them into ASCII first, because in your code there will be hex bytes already. This simplifies a lot the process of seeing how many bytes are necessary to overwrite certain registers on that application or service execution flow.
 
 [*] Usage: ./strtoByte.py [string to convert]
