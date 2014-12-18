@@ -1,0 +1,28 @@
+----------------------
+- strtoByte - README -
+----------------------
+
+Version: 0.1
+Author: Rachel - NebulaM87 (Twitter - @nebulam87)
+This is a tool that might prove useful when reverse engineering an application or service.
+
+Instead of sending a buffer as a string, it is better indicating it as a byte buffer in the code, as the debugger will show hexadecimal characters when a register is overwritter. 
+When you have to search those hex characters on your buffer to see exactly which bytes overwrote registers, it won't be necessary to convert them into ASCII first, because in your code there will be hex bytes already. This simplifies a lot the process of seeing how many bytes are necessary to overwrite certain registers on that application or service execution flow.
+
+[*] Usage: ./strtoByte.py [string to convert]
+
+[*] Version changes:
+
+0.1: First version.
+
+
+[*] Usage example:
+
+./strtoByte.py "Aa0Aa1Aa2Aa3Aa4Aa5Aa6Aa7Aa8Aa9Ab0Ab1Ab2Ab3Ab4Ab5Ab6Ab7Ab8Ab9Ac0Ac1Ac2Ac3Ac4Ac5Ac6Ac7Ac8Ac9Ad0Ad1Ad2Ad3Ad4Ad5Ad6Ad7Ad8Ad9Ae0Ae1Ae2Ae3Ae4Ae5Ae6Ae7Ae8Ae9Af0Af1Af2Af3Af4Af5Af6Af7Af8Af9Ag0Ag1Ag2Ag3Ag4Ag5Ag"
+
+[+] Byte string:
+-------------------------------------------------------------------------
+\x41\x61\x30\x41\x61\x31\x41\x61\x32\x41\x61\x33\x41\x61\x34\x41\x61\x35\x41\x61\x36\x41\x61\x37\x41\x61\x38\x41\x61\x39\x41\x62\x30\x41\x62\x31\x41\x62\x32\x41\x62\x33\x41\x62\x34\x41\x62\x35\x41\x62\x36\x41\x62\x37\x41\x62\x38\x41\x62\x39\x41\x63\x30\x41\x63\x31\x41\x63\x32\x41\x63\x33\x41\x63\x34\x41\x63\x35\x41\x63\x36\x41\x63\x37\x41\x63\x38\x41\x63\x39\x41\x64\x30\x41\x64\x31\x41\x64\x32\x41\x64\x33\x41\x64\x34\x41\x64\x35\x41\x64\x36\x41\x64\x37\x41\x64\x38\x41\x64\x39\x41\x65\x30\x41\x65\x31\x41\x65\x32\x41\x65\x33\x41\x65\x34\x41\x65\x35\x41\x65\x36\x41\x65\x37\x41\x65\x38\x41\x65\x39\x41\x66\x30\x41\x66\x31\x41\x66\x32\x41\x66\x33\x41\x66\x34\x41\x66\x35\x41\x66\x36\x41\x66\x37\x41\x66\x38\x41\x66\x39\x41\x67\x30\x41\x67\x31\x41\x67\x32\x41\x67\x33\x41\x67\x34\x41\x67\x35\x41\x67
+-------------------------------------------------------------------------
+
+Note that, at least if using OllyDBG, the bytes order shown on registers will be reversed. This means that the last byte shown on the register in OllyDBG will be the first byte you will have to look for within the sent buffer.
